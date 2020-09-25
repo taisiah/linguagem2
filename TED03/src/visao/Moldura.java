@@ -23,11 +23,13 @@ public class Moldura {
 		System.out.println("Digite a espessura da moldura:");
 		float esp = input.nextFloat();
 		float bmenor = b - (2 * esp);
-		float amenor = a - (2* esp);
+		float amenor = a - (2 * esp);
 		
 		Retangulo r2 = new Retangulo(bmenor,amenor);
 		
 		System.out.println("A área da moldura é "+ (r1.areaRetangulo() - r2.areaRetangulo()));
+		
+		input.close();
 	}
 
 }

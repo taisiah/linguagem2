@@ -16,7 +16,7 @@ public class Retangulo {
 	
 	
 	
-	public float getbase () {
+	public float getBase () {
 		return this.base; 
 	}	
 	public float getAltura () {

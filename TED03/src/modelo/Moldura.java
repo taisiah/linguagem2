@@ -10,7 +10,7 @@ public class Moldura {
 	
 	public Moldura (Retangulo r1 , float esp) {
 		this.r1 = r1;
-		this.setEspessura(esp);		
+		this.espessura = esp;		
 		this.r2 = new Retangulo(r1.getBase()-2*esp, r1.getAltura() - 2*esp);
 	}
 	
@@ -22,6 +22,10 @@ public class Moldura {
 		return r1.areaRetangulo() - r2.areaRetangulo();
 	}
 
+	public float valorMoldura(float precoM2) {
+		return precoM2 * this.areaMoldura();
+		
+	}
 	public float getEspessura() {
 		return espessura;
 	}

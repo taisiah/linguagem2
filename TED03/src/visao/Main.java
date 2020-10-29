@@ -13,6 +13,8 @@ public class Main {
 		Scanner input= new Scanner(System.in);
 		
 
+	
+		
 		
 		System.out.println("Digite a largura da moldura:");
 		float l = input.nextFloat();
@@ -26,6 +28,8 @@ public class Main {
 		
 		
 		System.out.println("A área da moldura é: "+ m1.areaMoldura() );
+		
+		System.out.println("O valor da moldura é: "+ m1.valorMoldura(30) );
 		
 		input.close();
 	}

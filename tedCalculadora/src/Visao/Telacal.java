@@ -4,6 +4,7 @@ package Visao;
 
 import java.awt.Color;
 import static javafx.scene.paint.Color.color;
+import modelo.Operandos;
 
 
 public class Telacal extends javax.swing.JFrame {
@@ -24,26 +25,26 @@ public class Telacal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        botoes = new javax.swing.JPanel();
         bTsoma = new javax.swing.JButton();
         bTsubtrai = new javax.swing.JButton();
         btmultiplica = new javax.swing.JButton();
         bTdivide = new javax.swing.JButton();
         bTigual = new javax.swing.JButton();
         bTzerar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        textoperandoA = new javax.swing.JTextField();
+        textoperandoB = new javax.swing.JTextField();
+        lbOperando = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        lbTITULO = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lbTITULO1 = new javax.swing.JLabel();
+        lbResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField1");
-
-        jLabel1.setText("CALCULADORA");
-
-        jPanel1.setBackground(new java.awt.Color(0, 255, 204));
+        botoes.setBackground(new java.awt.Color(0, 255, 204));
 
         bTsoma.setBackground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
         bTsoma.setText("+");
@@ -88,19 +89,19 @@ public class Telacal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout botoesLayout = new javax.swing.GroupLayout(botoes);
+        botoes.setLayout(botoesLayout);
+        botoesLayout.setHorizontalGroup(
+            botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(botoesLayout.createSequentialGroup()
+                        .addGroup(botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bTsoma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bTigual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bTdivide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btmultiplica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bTsubtrai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -108,20 +109,20 @@ public class Telacal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {bTdivide, bTigual, bTsoma, bTsubtrai, btmultiplica});
+        botoesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {bTdivide, bTigual, bTsoma, bTsubtrai, btmultiplica});
 
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        botoesLayout.setVerticalGroup(
+            botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botoesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bTzerar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bTdivide)
                     .addComponent(bTigual))
                 .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(botoesLayout.createSequentialGroup()
                         .addComponent(btmultiplica)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bTsubtrai))
@@ -129,65 +130,194 @@ public class Telacal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
+
+        textoperandoA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoperandoAActionPerformed(evt);
+            }
+        });
+
+        textoperandoB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoperandoBActionPerformed(evt);
+            }
+        });
+
+        lbOperando.setText("?");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(lbOperando))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(textoperandoB, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(textoperandoA, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textoperandoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbOperando)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textoperandoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+
+        lbTITULO.setText("CALCULADORA");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbTITULO, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbTITULO)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 153, 102));
+
+        lbTITULO1.setText("RESULTADO");
+
+        lbResultado.setBackground(new java.awt.Color(0, 102, 255));
+        lbResultado.setText("0");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 24, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbTITULO1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbTITULO1)
+                .addGap(18, 18, 18)
+                .addComponent(lbResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE))
-                        .addGap(141, 141, 141))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(133, 133, 133))))
+                .addGap(125, 125, 125)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(jLabel1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void bTsomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTsomaActionPerformed
-        bTsoma.setContentAreaFilled(false);
-        bTsoma.setOpaque(true);
-        bTsoma.setBackground(Color.BLUE);
+       // bTsoma.setContentAreaFilled(false);
+        //bTsoma.setOpaque(true);
+        //bTsoma.setBackground(Color.BLUE);
+        float a = Float.parseFloat(textoperandoA.getText());
+        float b = Float.parseFloat(textoperandoB.getText());
+        cal.setOperandoa(a);
+        cal.setOperandob(b);
+        String res = Float.toString(cal.soma());
+        lbOperando.setText("+");
+        lbResultado.setText(res);
+        
     }//GEN-LAST:event_bTsomaActionPerformed
 
     private void bTsubtraiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTsubtraiActionPerformed
-        // TODO add your handling code here:
+        float a = Float.parseFloat(textoperandoA.getText());
+        float b = Float.parseFloat(textoperandoB.getText());
+        cal.setOperandoa(a);
+        cal.setOperandob(b);
+        String res = Float.toString(cal.subtrai());
+        lbOperando.setText("-");
+        lbResultado.setText(res);
     }//GEN-LAST:event_bTsubtraiActionPerformed
 
     private void btmultiplicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmultiplicaActionPerformed
-        // TODO add your handling code here:
+        float a = Float.parseFloat(textoperandoA.getText());
+        float b = Float.parseFloat(textoperandoB.getText());
+        cal.setOperandoa(a);
+        cal.setOperandob(b);
+        String res = Float.toString(cal.multiplica());
+        lbOperando.setText("X");
+        lbResultado.setText(res);
     }//GEN-LAST:event_btmultiplicaActionPerformed
 
     private void bTdivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTdivideActionPerformed
-        // TODO add your handling code here:
+        float a = Float.parseFloat(textoperandoA.getText());
+        float b = Float.parseFloat(textoperandoB.getText());
+        cal.setOperandoa(a);
+        cal.setOperandob(b);
+        String res = Float.toString(cal.divide());
+        lbOperando.setText("/");
+        lbResultado.setText(res);
     }//GEN-LAST:event_bTdivideActionPerformed
 
     private void bTzerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTzerarActionPerformed
-        // TODO add your handling code here:
+      textoperandoA.setText("0");
+      textoperandoB.setText("0");
+      lbResultado.setText("");
+      lbOperando.setText("");
     }//GEN-LAST:event_bTzerarActionPerformed
 
     private void bTigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTigualActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bTigualActionPerformed
+
+    private void textoperandoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoperandoBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoperandoBActionPerformed
+
+    private void textoperandoAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoperandoAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoperandoAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,17 +353,24 @@ public class Telacal extends javax.swing.JFrame {
             }
         });
     }
-
+    Operandos cal = new Operandos(0,0);
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bTdivide;
     private javax.swing.JButton bTigual;
     private javax.swing.JButton bTsoma;
     private javax.swing.JButton bTsubtrai;
     private javax.swing.JButton bTzerar;
+    private javax.swing.JPanel botoes;
     private javax.swing.JButton btmultiplica;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lbOperando;
+    private javax.swing.JLabel lbResultado;
+    private javax.swing.JLabel lbTITULO;
+    private javax.swing.JLabel lbTITULO1;
+    private javax.swing.JTextField textoperandoA;
+    private javax.swing.JTextField textoperandoB;
     // End of variables declaration//GEN-END:variables
 }
